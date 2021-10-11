@@ -1,0 +1,19 @@
+---
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: argo-cd
+  namespace: kube-system
+spec:
+  chart: argo-cd
+  repo: "https://argoproj.github.io/argo-helm"
+  targetNamespace: argo-cd
+  valuesContent: |-
+    server:
+      ingress:
+        enabled: "true"
+        hosts:
+          - "argocd.gduque.fr"
+      extraArgs:
+        - "--insecure"
+
