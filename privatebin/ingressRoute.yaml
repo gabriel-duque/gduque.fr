@@ -1,0 +1,24 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: paste-secure-ingress
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`paste.gduque.fr`)
+    kind: Rule
+    services:
+      - name: privatebin
+        port: 80
+  - match: Method(`POST`) && Host(`paste.gduque.fr`)
+    kind: Rule
+    services:
+      - name: privatebin
+        port: 80
+    middlewares:
+      - name: master-forward-auth
+        namespace: traefik
+  tls:
+    secretName: privatebin-tls
