@@ -1,0 +1,35 @@
+---
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: authentik
+  namespace: kube-system
+spec:
+  repo: "https://charts.goauthentik.io"
+  chart: authentik
+  targetNamespace: authentik
+  valuesContent: |-
+    authentik:
+      secret_key: "z0PL*z}CYuJ~Q1j9q$0!aSz:%X?bY{;AcaBMM6mH-iO.Vks,9m"
+      postgresql:
+        password: "tototata"
+    ingress:
+      enabled: "true"
+      annotations:
+        kubernetes.io/tls-acme: "true"
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+      hosts:
+      - host: authentik.gduque.fr
+        paths:
+        - path: "/"
+          pathType: Prefix
+      tls:
+        - hosts:
+          - "authentik.gduque.fr"
+          secretName: "authentik-tls"
+    postgresql:
+      enabled: true
+      postgresqlPassword: "tototata"
+    redis:
+      enabled: true
+
