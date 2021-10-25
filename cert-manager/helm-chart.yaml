@@ -11,4 +11,9 @@ spec:
   targetNamespace: cert-manager
   set:
     installCRDs: "true"
+  valuesContent: |-
+    ingressShim:
+      defaultIssuerName: "letsencrypt-staging"
+      defaultIssuerKind: "ClusterIssuer"
+      defaultIssuerGroup: "cert-manager.io"
 
