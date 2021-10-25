@@ -2,12 +2,12 @@
 apiVersion: helm.cattle.io/v1
 kind: HelmChart
 metadata:
-  name: argo-cd
+  name: argocd
   namespace: kube-system
 spec:
   chart: argo-cd
   repo: "https://argoproj.github.io/argo-helm"
-  targetNamespace: argo-cd
+  targetNamespace: argocd
   valuesContent: |-
     server:
       ingress:
@@ -15,7 +15,6 @@ spec:
         annotations:
           kubernetes.io/tls-acme: "true"
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
-          traefik.ingress.kubernetes.io/router.middlewares: "traefik-master-forward-auth@kubernetescrd"
         enabled: "true"
         hosts:
           - "argocd.gduque.fr"
