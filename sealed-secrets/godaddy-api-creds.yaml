@@ -1,0 +1,22 @@
+{
+  "kind": "SealedSecret",
+  "apiVersion": "bitnami.com/v1alpha1",
+  "metadata": {
+    "name": "godaddy-api-creds",
+    "namespace": "cert-manager",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "template": {
+      "metadata": {
+        "name": "godaddy-api-creds",
+        "namespace": "cert-manager",
+        "creationTimestamp": null
+      },
+      "data": null
+    },
+    "encryptedData": {
+      "key": "AgBZuQ7xl5B6ocdWUdht1+2D/fON5pAvRiHJ/7LP1V4Ko8VCXF5AjcRSDM3dbb5WHkQD+Ucx9897a1yMzVbv4KrwX5/L/emB7d9M0SyuHXV+qRqG5TM1RQiv35W55GMlTPR3wCXKhQumRsbX498PSJBFHhigbSce0Vh4mf9ZUn3xS3Bw02970X7pEeP14bOHZ/4VC4H4NuFdH1ZxMRhtpGyZPsbMvEemHrhwxZ96s/XpQL6LOo1n6AZt19E/Z7fMXvkLlXCxYGB3ZGnSJyWqeqTYx7IP5RJKqcVFjE13YunMtA01b2wSCsZTk65u+aA2fb3gappu6yqevZlEBPvNa7ttbM9cvrwWqPgH5JhIe9Gi3VkzsOz3hyMDXdUfNBJ/v6WBsoJixr5ORPTtgyVol/1JeKeV7/GpBayT57+dJLjj8O3mZshOGb3+z5UbxiyPkpR6PXE6olsX/GmJsiIXYnJ2oT4YDCKT2VwcOCuMhFQqKCR+vVZX7ZgOqbhB5zTPZ4W18L9Xm4AjEKXsI5nqH6xG9ojMY8JGqt9AY3pP6d7TAYRxz2RNespEF+OsoEbrQMwdYJjmYHiDTvKpqj18CEyahydT96ZkhD7gEoF1oYPP5UHI0ip6uOC8jksFSCKQ2BvxPiFNB2zIN7hQ0U6rZJx3e5kEWMEbMRHv/Ky1cXe4dEweLs6Yd1gQyJgia28I6tpHPcML6NDqkwFrqWp6Ap1pmJLDgIrV7Z4JfAj9/jGlNNyDe9kqSaLk1wYDEJeJUvO6isXy78Pzktls"
+    }
+  }
+}
