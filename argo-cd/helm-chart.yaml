@@ -11,9 +11,16 @@ spec:
   valuesContent: |-
     server:
       ingress:
+        https: true
+        annotations:
+          kubernetes.io/tls-acme: "true"
+          traefik.ingress.kubernetes.io/router.entrypoints: websecure
+          traefik.ingress.kubernetes.io/router.middlewares: "traefik-master-forward-auth@kubernetescrd"
         enabled: "true"
         hosts:
           - "argocd.gduque.fr"
-      extraArgs:
-        - "--insecure"
+        tls:
+          - hosts:
+            - "argocd.gduque.fr"
+            secretName: "argocd-tls"
 
