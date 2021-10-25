@@ -1,0 +1,23 @@
+---
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: longhorn
+  namespace: kube-system
+spec:
+  repo: "https://charts.longhorn.io"
+  chart: longhorn
+  targetNamespace: longhorn
+  valuesContent: |-
+    ingress:
+      enabled: "true"
+      host: "longhorn.gduque.fr"
+      tls: "true"
+      tlsSecret: "longhorn-tls"
+      annotations:
+        kubernetes.io/tls-acme: "true"
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.middlewares: "traefik-master-forward-auth@kubernetescrd"
+    defaultSettings:
+      defaultReplicaCount: 1
+
